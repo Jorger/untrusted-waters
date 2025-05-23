@@ -1,0 +1,135 @@
+.canon {
+  --size: 160px;
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  z-index: 10;
+  transition: transform 0.3s;
+  transform: translateY(150%);
+}
+
+.canon-turret {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: transform calc(var(--ball-speed) * 0.05) linear;
+}
+
+.canon-turret-container {
+  --border-radius-container: 60px;
+  height: 90%;
+  width: 50%;
+  border-radius: var(--border-radius-container);
+  position: absolute;
+  background-color: #000100;
+  left: 25%;
+  top: -15%;
+  box-shadow: 10px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+.canon.animate .canon-turret-container {
+  --delay-animation: calc(var(--ball-speed) * 0.3);
+  animation: stretchY var(--ball-speed) ease-in-out;
+  animation-delay: var(--delay-animation);
+  transform-origin: bottom;
+}
+
+.canon-turret-container::after {
+  content: "";
+  position: absolute;
+  background-color: #000100;
+  left: 0;
+  top: -2px;
+  width: 100%;
+  height: 40%;
+  border-radius: 50%;
+
+  background-image:
+    radial-gradient(#000100 50%, hsla(0, 0%, 100%, 0) 0),
+    radial-gradient(#383939 50%, hsla(0, 0%, 100%, 0) 0);
+  background-position:
+    50% 100%,
+    0 0;
+  background-repeat: no-repeat;
+  background-size:
+    100% 80%,
+    100% 100%;
+}
+
+.canon-turret-container::before {
+  --inner: 15%;
+  content: "";
+  position: absolute;
+  background-color: #5b5b5b;
+  border-radius: calc(var(--border-radius-container) - 10px);
+  left: calc(var(--inner) / 1.5);
+  top: calc(var(--inner) / 2);
+  width: 80%;
+  height: calc(100% - var(--inner));
+
+  background-image:
+    radial-gradient(circle, #8c8c8c 41%, hsla(0, 0%, 100%, 0) 0),
+    radial-gradient(circle, #8c8c8c 41%, hsla(0, 0%, 100%, 0) 0),
+    linear-gradient(#8c8c8c, #8c8c8c);
+
+  background-position:
+    10% 50%,
+    10% 80%,
+    11% 63%;
+  background-size:
+    30% 30%,
+    30% 30%,
+    27% 22%;
+  background-repeat: no-repeat;
+}
+
+.canon-base {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: #000100;
+  position: relative;
+  box-shadow: 10px 10px 1px rgba(0, 0, 0, 0.2);
+  background: conic-gradient(black var(--progress), #d4dcd2cc 0deg);
+}
+
+.canon-base::after {
+  --inner: 20%;
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: calc(var(--inner) / 2);
+  top: calc(var(--inner) / 2);
+  width: calc(100% - var(--inner));
+  height: calc(100% - var(--inner));
+  background-color: #009ebe;
+}
+
+.canon.red .canon-base::after {
+  background-color: #c9534a;
+}
+
+.canon.top {
+  transform: translateY(-150%);
+}
+
+.canon.show {
+  transform: translateY(0);
+}
+
+@keyframes stretchY {
+  0% {
+    transform: scaleY(1);
+  }
+  30% {
+    transform: scaleY(0.5);
+  }
+  60% {
+    transform: scaleY(1.5);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}

@@ -1,0 +1,49 @@
+.game-grid {
+  height: 100%;
+  position: relative;
+  transition: all 0.5s linear;
+  width: 100%;
+}
+
+.game-grid-color-red {
+  background-color: var(--color-red);
+}
+
+.game-grid-color-blue {
+  background-color: var(--color-blue);
+}
+
+.game-grid.shake {
+  animation: shake 0.82s ease-in both;
+}
+
+.game-grid::after,
+.game-grid::before {
+  border-radius: 15px;
+  content: "";
+  height: 320px;
+  left: 0;
+  position: absolute;
+  top: 10px;
+  width: 100%;
+}
+
+.game-grid::before {
+  top: 400px;
+}
+
+.game-grid.blue::after {
+  background-color: var(--color-blue);
+}
+
+.game-grid.blue::before {
+  background-color: var(--color-red);
+}
+
+.game-grid.red::after {
+  background-color: var(--color-red);
+}
+
+.game-grid.red::before {
+  background-color: var(--color-blue);
+}

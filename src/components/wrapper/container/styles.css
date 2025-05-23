@@ -1,0 +1,30 @@
+.container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+.screen {
+  align-items: center;
+  background-color: rgb(62, 61, 61);
+  display: flex;
+  height: var(--base-height);
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: var(--base-width);
+}
+
+/* @media only screen and (max-width: 420px) {
+  .screen {
+    background-color: unset;
+    background-image: unset;
+  }
+
+  body {
+    background-color: #00a6df;
+    background-image: var(--bg-image);
+  }
+} */

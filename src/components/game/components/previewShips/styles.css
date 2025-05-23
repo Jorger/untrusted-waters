@@ -1,0 +1,70 @@
+.preview-ships {
+  height: 70px;
+  left: 0;
+  position: absolute;
+  top: 330px;
+  width: 100%;
+}
+
+.preview-ships-top,
+.preview-ships-bottom {
+  --size-width: 20px;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  gap: 5px;
+  padding: 0 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-ships-base {
+  background-image: var(--ship);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.preview-ships-base.destroyed {
+  animation: rubberBand 0.8s both;
+  filter: grayscale(1) brightness(0.4);
+}
+
+.preview-ships-1 {
+  width: calc(var(--size-width) * 5);
+  background-size: 345% 100%;
+  background-position: 0;
+}
+
+.preview-ships-2 {
+  background-position: 38% 60%;
+  background-size: 450% 100%;
+  width: calc(var(--size-width) * 4);
+}
+
+.preview-ships-3 {
+  background-position: 63% 58%;
+  background-size: 588% 100%;
+  width: calc(var(--size-width) * 3);
+}
+
+.preview-ships-4 {
+  background-position: 85% 58%;
+  background-size: 588% 100%;
+  width: calc(var(--size-width) * 3);
+}
+
+.preview-ships-5 {
+  background-position: 99% 58%;
+  background-size: 900% 100%;
+  width: calc(var(--size-width) * 2);
+}
+
+.preview-ships-bottom .preview-ships-base {
+  transform: scaleX(-1);
+}
+
+.preview-ships-top.red,
+.preview-ships-bottom.red {
+  filter: hue-rotate(180deg);
+}

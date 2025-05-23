@@ -1,0 +1,68 @@
+.ship {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* Gira el barco y compesa el giro para que quede relativo a la celda */
+.ship.vertical {
+  rotate: 90deg;
+  transform-origin: top left;
+  transform: translate(0, calc(var(--tile-size) * -1));
+}
+
+.ship.red {
+  filter: hue-rotate(180deg);
+}
+
+.ship.furtive {
+  filter: grayscale(0.5);
+  opacity: 0.5;
+}
+
+.ship.red.furtive {
+  filter: grayscale(0.5) hue-rotate(180deg);
+}
+
+.ship.destroyed {
+  filter: grayscale(1) brightness(0.4);
+}
+
+.ship.destroyed::before {
+  animation: rubberBand 1s both;
+}
+
+.ship::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: var(--ship);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ship.ship-1::before {
+  background-size: 345% 145%;
+  background-position: 0;
+}
+
+.ship.ship-2::before {
+  background-size: 450% 160%;
+  background-position: 38% 60%;
+}
+
+.ship.ship-3::before {
+  background-size: 588% 154%;
+  background-position: 63% 58%;
+}
+
+.ship.ship-4::before {
+  background-size: 588% 154%;
+  background-position: 85% 58%;
+}
+
+.ship.ship-5::before {
+  background-size: 900% 167%;
+  background-position: 99% 58%;
+}

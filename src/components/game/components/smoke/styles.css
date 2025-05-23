@@ -1,0 +1,82 @@
+.smoke {
+  position: absolute;
+  background-repeat: no-repeat;
+  pointer-events: none;
+
+  /* border: 1px solid red; */
+
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.5) 50%, transparent 0),
+    radial-gradient(circle, rgba(255, 255, 255, 0.7) 50%, transparent 0),
+    radial-gradient(circle, rgba(255, 255, 255, 1) 50%, transparent 0),
+    radial-gradient(circle, rgba(255, 255, 255, 0.6) 50%, transparent 0),
+    radial-gradient(circle, rgba(255, 255, 255, 1) 50%, transparent 0),
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 50%, transparent 0);
+
+  opacity: 0;
+  animation: smokeAnimation var(--ball-speed) linear;
+  z-index: 14;
+}
+
+.smoke.delay {
+  --delay-animation: calc(var(--ball-speed) * 0.3);
+  animation-delay: var(--delay-animation);
+}
+
+/* .smoke.active {
+  animation: smokeAnimation 0.3s linear;
+} */
+
+@keyframes smokeAnimation {
+  0% {
+    background-size:
+      90% 90%,
+      90% 90%,
+      90% 90%,
+      70% 70%,
+      60% 60%,
+      50% 50%;
+    background-position:
+      50% 100%,
+      190% 150%,
+      0% 10%,
+      90% 10%,
+      80% 80%,
+      20% 20%;
+    opacity: 1;
+  }
+  50% {
+    background-size:
+      70% 70%,
+      60% 60%,
+      50% 50%,
+      40% 40%,
+      30% 30%,
+      30% 30%;
+    background-position:
+      100% 100%,
+      80% 50%,
+      10% 80%,
+      80% 10%,
+      60% 30%,
+      10% 10%;
+    opacity: 0.8;
+  }
+  100% {
+    background-size:
+      50% 50%,
+      30% 30%,
+      10% 10%,
+      5% 5%,
+      10% 10%,
+      5% 5%;
+    background-position:
+      110% 100%,
+      -5% 20%,
+      0% 100%,
+      80% 5%,
+      30% 10%,
+      0% 0%;
+    opacity: 0;
+  }
+}
