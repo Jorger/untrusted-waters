@@ -10,7 +10,7 @@ This game is inspired by the classic game [Battleship](https://en.wikipedia.org/
 
 This game is powered by [Rune](https://developers.rune.ai/), a powerful multiplayer game SDK. Rune makes it easy to play games with your friends in real time, without needing servers or complex setup.
 
-Rune handles matchmaking, multiplayer logic, and state sync — all in real time.
+Rune handles matchmaking, multiplayer logic, and state sync, all in real time.
 
 Learn more about Rune here: https://developers.rune.ai/
 
@@ -26,6 +26,7 @@ Untrusted Waters is a turn-based strategy game where two players try to sink eac
 * 🏆 The first player to sink all enemy ships wins.
 
 # 📱 Play the Game
+
 You can try the game here on the Rune Simulator:
 
 👉 Play on Rune Simulator: https://app.rune.ai/dev-ULreHsEw
